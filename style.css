@@ -1,0 +1,128 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  line-height: 1.55;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  margin-bottom: 36px;
+}
+
+.intro-text {
+  flex: 1;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 36px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 0 0 4px 0;
+  font-weight: 500;
+}
+
+p {
+  font-size: 15px;
+  margin: 0 0 12px 0;
+}
+
+a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.links {
+  margin-top: 16px;
+}
+
+.profile {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.project {
+  display: flex;
+  gap: 22px;
+  margin: 28px 0;
+  align-items: flex-start;
+}
+
+.project img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.authors {
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.venue {
+  color: #555;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.project-links {
+  margin-top: 4px;
+}
+
+footer {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  color: #777;
+  font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  .intro {
+    flex-direction: column-reverse;
+  }
+
+  .profile {
+    width: 160px;
+    height: 160px;
+  }
+
+  .project {
+    flex-direction: column;
+  }
+
+  .project img {
+    width: 100%;
+    height: auto;
+  }
+}
