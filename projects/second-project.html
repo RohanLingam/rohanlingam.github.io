@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Brushless Motor Driver &mdash; Your Name</title>
+
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr>
+        <td style="padding:2.5%">
+
+          <p class="backlink"><a href="../index.html">&larr; back to home</a></p>
+
+          <p class="project-title">Brushless Motor Driver from Scratch</p>
+          <p class="project-meta">Course project, EE 101 &middot; Fall 2025</p>
+          <p class="project-links">
+            <a href="https://github.com/yourusername/">Code</a>
+          </p>
+
+          <div class="project-body">
+
+            <figure>
+              <img src="../images/projects/motordriver_hero.jpg" alt="motor driver board on the bench">
+              <figcaption>On the bench, driving a 5010 gimbal motor.</figcaption>
+            </figure>
+
+            <p>
+              A 40 V, 15 A field-oriented-control driver, built because I wanted to understand what
+              a commercial ESC is actually doing between the throttle command and the phase currents.
+              This is the short version of the page &mdash; a good example of what a project writeup
+              looks like when you don't have a formal report to attach.
+            </p>
+
+            <h2>How it works</h2>
+            <p>
+              Three half-bridges of 60 V N-channel MOSFETs, driven by a bootstrapped gate driver, with
+              low-side shunts sensing two of the three phase currents. An STM32G4 runs the Clarke and
+              Park transforms and two PI loops at 20 kHz, which happens to be the PWM frequency.
+            </p>
+
+            <table class="spec">
+              <tr><th>Bus voltage</th><td>12&ndash;40 V</td></tr>
+              <tr><th>Continuous current</th><td>15 A with airflow</td></tr>
+              <tr><th>Control loop</th><td>FOC, 20 kHz</td></tr>
+              <tr><th>Position sense</th><td>AS5047P magnetic encoder</td></tr>
+            </table>
+
+            <h2>What went wrong</h2>
+            <ul>
+              <li>Rev A had the current-sense amplifier inputs swapped, so the loop ran away instantly.
+                  Two dead MOSFETs and one memorable bang.</li>
+              <li>Gate ringing at turn-on was bad enough to false-trigger the low side; a 10 &ohm; gate
+                  resistor fixed it at the cost of a bit of efficiency.</li>
+              <li>The encoder needed a mechanical offset calibration I hadn't budgeted time for.</li>
+            </ul>
+
+            <blockquote>
+              If the current sense polarity is wrong, FOC doesn't degrade gracefully. Check it with a
+              bench supply current-limited to 500 mA before you connect the real bus.
+            </blockquote>
+
+            <h2>Results</h2>
+            <p>
+              Smooth rotation from 5 to 4000 RPM, holding position within about 0.3 degrees under a
+              hand load. Efficiency measured at 91% at half load, which is worse than a good commercial
+              ESC and better than I expected.
+            </p>
+
+          </div>
+
+          <hr>
+          <p class="backlink"><a href="../index.html">&larr; back to home</a></p>
+
+        </td>
+      </tr>
+    </tbody></table>
+  </body>
+</html>

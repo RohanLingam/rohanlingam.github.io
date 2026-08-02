@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Wearable Biosignal Logger &mdash; Your Name</title>
+
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr>
+        <td style="padding:2.5%">
+
+          <p class="backlink"><a href="../index.html">&larr; back to home</a></p>
+
+          <p class="project-title">Wearable Biosignal Logger</p>
+          <p class="project-meta">Personal project &middot; Jan &ndash; Jun 2025</p>
+          <p class="project-links">
+            <a href="../data/example-project-report.pdf">Report (PDF)</a> &nbsp;/&nbsp;
+            <a href="https://github.com/yourusername/">Code</a> &nbsp;/&nbsp;
+            <a href="https://github.com/yourusername/">Schematics</a>
+          </p>
+
+          <div class="project-body">
+
+            <figure>
+              <img src="../images/projects/biologger_hero.jpg" alt="assembled logger board">
+              <figcaption>Rev C, assembled and running. 42 x 58 mm, 4 layers.</figcaption>
+            </figure>
+
+            <p>
+              This is a three-channel ECG/EMG recorder small enough to tape to your chest and
+              cheap enough that losing one isn't a disaster. It samples at 1 kHz per channel,
+              writes to a microSD card, and runs about 26 hours on a 400 mAh LiPo. I built it
+              because the commercial options I could find cost more than my rent and wouldn't
+              give me raw samples.
+            </p>
+
+            <hr>
+
+            <h2>Why it was hard</h2>
+            <p>
+              Biopotentials are tiny &mdash; a surface ECG is roughly 1 mV peak, sitting on top of a
+              half-cell electrode offset that can drift by hundreds of millivolts, in a room full of
+              50/60 Hz mains hum that couples straight into your body. The whole design is a fight
+              between three constraints:
+            </p>
+            <ul>
+              <li><strong>Gain vs. offset.</strong> You want a lot of gain, but DC offset saturates the
+                  front-end before you get there.</li>
+              <li><strong>Common-mode rejection vs. cost.</strong> CMRR depends on how well the two
+                  input paths match, and matching costs money.</li>
+              <li><strong>Power vs. noise.</strong> Every microamp you cut raises the noise floor
+                  somewhere.</li>
+            </ul>
+
+            <h2>Analog front-end</h2>
+            <p>
+              I ended up using a TI ADS1299-style architecture: a low-noise PGA per channel feeding a
+              24-bit delta-sigma converter, with the DC offset handled by AC-coupling ahead of the PGA
+              rather than by a servo loop. A right-leg-drive amplifier pushes the inverted common-mode
+              signal back into the body, which bought about 30 dB of hum rejection for the cost of one
+              op-amp.
+            </p>
+
+            <div class="imgrow">
+              <figure>
+                <img src="../images/projects/biologger_schematic.jpg" alt="front-end schematic">
+                <figcaption>Front-end, one channel of three.</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/biologger_pcb.jpg" alt="pcb layout">
+                <figcaption>Layout. Analog ground is the island on the left.</figcaption>
+              </figure>
+            </div>
+
+            <h3>Specs</h3>
+            <table class="spec">
+              <tr><th>Channels</th><td>3 differential, 1 driven reference</td></tr>
+              <tr><th>Sample rate</th><td>1 kSPS/channel, 24-bit</td></tr>
+              <tr><th>Input noise</th><td>1.9 &micro;V<sub>pp</sub>, 0.5&ndash;40 Hz</td></tr>
+              <tr><th>CMRR</th><td>&gt; 100 dB at 60 Hz, measured</td></tr>
+              <tr><th>MCU</th><td>STM32L432, 80 MHz</td></tr>
+              <tr><th>Battery life</th><td>26 h on 400 mAh</td></tr>
+              <tr><th>Board</th><td>4-layer, 42 x 58 mm</td></tr>
+            </table>
+
+            <h2>Firmware</h2>
+            <p>
+              The MCU does almost nothing on purpose: DMA moves SPI frames from the ADC into a
+              double buffer, and a low-priority task flushes full buffers to the SD card in 512-byte
+              blocks. Doing the write in the interrupt handler was the first version and it dropped
+              samples every time the card decided to do internal wear leveling.
+            </p>
+
+            <pre><code>void DMA1_Channel2_IRQHandler(void) {
+    buf_ready = active;      // hand the full half to the writer
+    active   ^= 1;           // keep filling the other half
+    HAL_DMA_IRQHandler(&hdma_spi1_rx);
+}</code></pre>
+
+            <blockquote>
+              Lesson: an SD card is not a peripheral, it's a small computer with its own opinions
+              about when to be busy. Buffer accordingly.
+            </blockquote>
+
+            <h2>Results</h2>
+            <p>
+              Side-by-side against a borrowed clinical recorder, R-peak timing agreed within 3 ms
+              over a 20-minute session and the QRS morphology was close enough that I couldn't tell
+              the traces apart by eye. The noise floor is about 2x worse than the reference unit,
+              which I think is the electrode cable rather than the board.
+            </p>
+
+            <figure>
+              <img src="../images/projects/biologger_trace.jpg" alt="recorded ECG trace">
+              <figcaption>30 seconds of Lead II, raw except for a 0.5 Hz high-pass.</figcaption>
+            </figure>
+
+            <h2>Full writeup</h2>
+            <p>
+              The complete design document &mdash; noise budget, part selection, bring-up notes, and
+              everything that went wrong on Rev A and Rev B &mdash; is here:
+            </p>
+            <iframe class="doc-embed" src="../data/example-project-report.pdf" title="Project report"></iframe>
+            <p><a href="../data/example-project-report.pdf">Download the PDF</a></p>
+
+            <h2>What's next</h2>
+            <ul>
+              <li>Rev D with BLE streaming so I can see the trace live.</li>
+              <li>A flex-PCB electrode harness to kill the cable noise.</li>
+              <li>Writing this up properly &mdash; possibly a short paper with the lab.</li>
+            </ul>
+
+            <h2>References</h2>
+            <ul>
+              <li><a href="https://www.ti.com/product/ADS1299">ADS1299 datasheet, Texas Instruments.</a></li>
+              <li><a href="https://example.com">Winter, D. "Biomechanics and Motor Control of Human Movement," Wiley.</a></li>
+              <li><a href="https://example.com">Chi, Y. M., et al. "Dry-Contact and Noncontact Biopotential Electrodes," IEEE Rev. Biomed. Eng., 2010.</a></li>
+            </ul>
+
+          </div>
+
+          <hr>
+          <p class="backlink"><a href="../index.html">&larr; back to home</a></p>
+
+        </td>
+      </tr>
+    </tbody></table>
+  </body>
+</html>
