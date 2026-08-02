@@ -1,126 +1,171 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rohan Lingam</title>
-  <meta name="description" content="Personal website of Rohan Lingam.">
-  <meta property="og:title" content="Rohan Lingam">
-  <meta property="og:description" content="Personal website of Rohan Lingam.">
-  <meta property="og:type" content="website">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="wrap">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <!-- ============ HEADER: name, photo, one-line bio, contact links ============ -->
-    <header class="intro">
-      <div class="intro-text">
-        <h1 class="name">Rohan Lingam</h1>
-        <p class="bio">
-          [One or two sentences: who you are and what you do right now — e.g. "I'm a software
-          engineer / student at ___, interested in ___." This is the first thing anyone reads,
-          so keep it plain and specific.]
-        </p>
-        <nav class="links" aria-label="Contact links">
-          <a href="mailto:you@example.com">Email</a>
-          <span aria-hidden="true">/</span>
-          <a href="resume.pdf">Resume</a>
-          <span aria-hidden="true">/</span>
-          <a href="https://github.com/rohanlingam">GitHub</a>
-          <span aria-hidden="true">/</span>
-          <a href="https://linkedin.com/in/rohanlingam">LinkedIn</a>
-          <span aria-hidden="true">/</span>
-          <a href="https://twitter.com/rohanlingam">Twitter</a>
-        </nav>
-      </div>
-      <div class="intro-photo">
-        <img src="images/profile-placeholder.svg" alt="Photo of Rohan Lingam" width="160" height="160">
-      </div>
-    </header>
+    <title>Rohan Lingam</title>
 
-    <main>
+    <meta name="author" content="Rohan Lingam">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
-      <!-- ============ ABOUT ============ -->
-      <section class="block" id="about">
-        <h2>About</h2>
-        <p>
-          [Two to four sentences of actual narrative: where you're based or from, what you
-          studied or do now, the kind of problems you like working on, and one detail that
-          makes this recognizably you rather than a template — a specific interest, a hobby,
-          how you think. Write it like you're talking to a person.]
-        </p>
-      </section>
+  </head>
 
-      <!-- ============ EXPERIENCE ============ -->
-      <section class="block" id="experience">
-        <h2>Experience</h2>
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
 
-        <div class="entry">
-          <div class="entry-header">
-            <h3>Role Title <span class="entry-org">— Company Name</span></h3>
-            <span class="entry-dates">Month Year – Present</span>
-          </div>
-          <p>[One or two sentences on what you actually did. A concrete result beats a job description — "cut build time 40%" not "responsible for CI."]</p>
-        </div>
+          <!-- ============ HEADER ============ -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  Rohan Lingam
+                </p>
+                <p>
+                  [One or two sentences: who you are and what you do right now &mdash; e.g. "I'm a software engineer / student at <a href="#">___</a>, interested in ___." This is the first thing anyone reads, so keep it plain and specific, the way the line above this one talks about DeepMind and NeRF.]
+                </p>
+                <p style="text-align:center">
+                  <a href="mailto:you@example.com">Email</a> &nbsp;/&nbsp;
+                  <a href="resume.pdf">Resume</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/rohanlingam">Github</a> &nbsp;/&nbsp;
+                  <a href="https://linkedin.com/in/rohanlingam">LinkedIn</a> &nbsp;/&nbsp;
+                  <a href="https://twitter.com/rohanlingam">Twitter</a>
+                </p>
+              </td>
+              <td style="padding:2.5%;width:37%;max-width:37%">
+                <a href="images/profile-placeholder.svg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/profile-placeholder.svg" class="hoverZoomLink"></a>
+              </td>
+            </tr>
+          </tbody></table>
 
-        <div class="entry">
-          <div class="entry-header">
-            <h3>Role Title <span class="entry-org">— Company Name</span></h3>
-            <span class="entry-dates">Month Year – Month Year</span>
-          </div>
-          <p>[Same pattern. Copy this whole `.entry` block for each additional role.]</p>
-        </div>
-      </section>
+          <!-- ============ PROJECTS ============
+               Same section pattern as "Research" in the reference: an <h2>,
+               a one-paragraph intro mentioning the highlight convention,
+               then a table of entries below. -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>Projects</h2>
+                <p>
+                  [One line on what kind of work this is &mdash; e.g. "Things I've built for fun or for work." Featured projects are <span class="highlight">highlighted</span>.]
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
 
-      <!-- ============ PROJECTS ============ -->
-      <section class="block" id="projects">
-        <h2>Projects</h2>
+          <!-- Entry rows. Each <tr> is one project: a hover-swap thumbnail
+               (.one/.two, exactly like the reference — hover over the image)
+               in the left cell, title/meta/links/description in the right
+               cell. Copy one whole <tr>...</tr> block per additional project. -->
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-        <div class="entry entry-project">
-          <div class="entry-thumb" aria-hidden="true"></div>
-          <div class="entry-body">
-            <div class="entry-header">
-              <h3>Project Name</h3>
-              <span class="entry-dates">2026</span>
-            </div>
-            <p>[What it is, what you built it with, and why it's interesting — one or two sentences.]</p>
-            <p class="entry-links"><a href="#">Demo</a> &nbsp;/&nbsp; <a href="#">Code</a></p>
-          </div>
-        </div>
+            <tr bgcolor="#ffffd0">
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <div class="one">
+                  <div class="two">
+                    <img src="images/thumb-after.svg" width="100%">
+                  </div>
+                  <img src="images/thumb-before.svg" width="100%">
+                </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="#">
+                  <span class="papertitle">Project Name</span>
+                </a>
+                <br>
+                <em>Personal project</em>, 2026
+                <br>
+                <a href="#">demo</a>
+                /
+                <a href="#">code</a>
+                <p></p>
+                <p>
+                  [What it is, what you built it with, and why it's interesting &mdash; one or two sentences. This entry is highlighted (pale-yellow row) and its thumbnail swaps on hover, same as the reference &mdash; swap in a before/after pair or a screenshot + a short clip.]
+                </p>
+              </td>
+            </tr>
 
-        <div class="entry entry-project">
-          <div class="entry-thumb" aria-hidden="true"></div>
-          <div class="entry-body">
-            <div class="entry-header">
-              <h3>Project Name</h3>
-              <span class="entry-dates">2025</span>
-            </div>
-            <p>[Copy this whole `.entry.entry-project` block for each additional project. Swap the
-              `.entry-thumb` div for an &lt;img&gt; tag once you have a real screenshot — see README.]</p>
-            <p class="entry-links"><a href="#">Demo</a> &nbsp;/&nbsp; <a href="#">Code</a></p>
-          </div>
-        </div>
-      </section>
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <div class="one">
+                  <div class="two">
+                    <img src="images/thumb-after.svg" width="100%">
+                  </div>
+                  <img src="images/thumb-before.svg" width="100%">
+                </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="#">
+                  <span class="papertitle">Project Name</span>
+                </a>
+                <br>
+                <em>Side project &mdash; React, Node.js</em>, 2025
+                <br>
+                <a href="#">demo</a>
+                /
+                <a href="#">code</a>
+                <p></p>
+                <p>
+                  [Copy this whole &lt;tr&gt;...&lt;/tr&gt; block for each additional project. Drop the bgcolor="#ffffd0" attribute on the &lt;tr&gt; for entries you don't want highlighted &mdash; this one isn't.]
+                </p>
+              </td>
+            </tr>
 
-      <!-- ============ EDUCATION ============ -->
-      <section class="block" id="education">
-        <h2>Education</h2>
+          </tbody></table>
 
-        <div class="entry">
-          <div class="entry-header">
-            <h3>University Name <span class="entry-org">— Degree, Major</span></h3>
-            <span class="entry-dates">Year – Year</span>
-          </div>
-        </div>
-      </section>
+          <!-- ============ EXPERIENCE / EDUCATION ============
+               Same compact pattern as the reference's "Teaching" /
+               "Academic Service" rows: a colored-box label instead of a
+               thumbnail, plain list on the right. Good for sections that
+               don't need per-entry images. -->
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-    </main>
+            <tr>
+              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+                <div class="colored-box" style="background-color: #a8d0e6;">
+                  <h2>Experience</h2>
+                </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:center">
+                <strong>Role Title &mdash; Company Name</strong> (Month Year &ndash; Present)
+                <br>
+                [One line on what you actually did &mdash; a concrete result beats a job description.]
+                <br><br>
+                <strong>Role Title &mdash; Company Name</strong> (Month Year &ndash; Month Year)
+                <br>
+                [Add a &lt;br&gt;&lt;br&gt; and one more line per role.]
+              </td>
+            </tr>
 
-    <footer class="site-footer">
-      <p>&copy; 2026 Rohan Lingam. Built with plain HTML &amp; CSS, hosted on GitHub Pages.</p>
-    </footer>
+            <tr>
+              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+                <div class="colored-box" style="background-color: #edd892;">
+                  <h2>Education</h2>
+                </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:center">
+                <strong>University Name &mdash; Degree, Major</strong> (Year &ndash; Year)
+              </td>
+            </tr>
 
-  </div>
-</body>
+          </tbody></table>
+
+          <!-- ============ FOOTER ============ -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:right;font-size:small;">
+                  Design adapted from <a href="https://jonbarron.info/">Jon Barron</a>'s personal site, whose <a href="https://github.com/jonbarron/jonbarron.github.io">source</a> is offered freely to clone for personal use.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+
+        </td>
+      </tr>
+    </tbody></table>
+  </body>
 </html>
