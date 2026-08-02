@@ -1,194 +1,156 @@
-/* ============================================================
-   Rohan Lingam — personal site
-   Plain HTML/CSS, no build step, no external font/JS dependencies.
-   ============================================================ */
-
-:root {
-  --bg: #fcfbf9;
-  --text: #1c1c1c;
-  --text-muted: #6b6b6b;
-  --accent: #2b5b84;
-  --accent-soft: #eef3f6;
-  --border: #e4e1da;
-
-  --serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', Palatino, serif;
-  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-
-  --max-width: 760px;
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-* { box-sizing: border-box; }
+a {
+  color: #1772d0;
+  text-decoration: none;
+}
 
-html { -webkit-text-size-adjust: 100%; }
+a:focus,
+a:hover {
+  color: #f09228;
+  text-decoration: none;
+}
 
-body {
+body,
+td,
+th,
+tr,
+p,
+a {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+strong {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+h2 {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
-  font-size: 17px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
+  font-weight: normal;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 22px;
 }
 
-.wrap {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 64px 24px 56px;
+.papertitle {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
 }
-
-a { color: var(--accent); }
-a:focus-visible, img:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
-
-/* ---------------- Header / intro ---------------- */
-
-.intro {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  margin-bottom: 56px;
-}
-
-.intro-text { flex: 1; min-width: 0; }
 
 .name {
-  font-family: var(--serif);
-  font-size: 2.25rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin: 0 0 14px;
+  padding-top: 20px;
+  margin: 0;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 32px;
 }
 
-.bio {
-  margin: 0 0 16px;
-}
-
-.links {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
-.links a { text-decoration: none; }
-.links a:hover { text-decoration: underline; }
-.links span { color: var(--border); margin: 0 8px; }
-
-.intro-photo { flex: 0 0 auto; }
-.intro-photo img {
-  display: block;
+.one {
   width: 160px;
   height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 6px 20px rgba(28, 28, 28, 0.10);
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
-}
-.intro-photo img:hover {
-  box-shadow: 0 10px 28px rgba(28, 28, 28, 0.16);
-  transform: translateY(-2px);
+  position: relative;
 }
 
-/* ---------------- Sections ---------------- */
-
-.block { margin-bottom: 48px; }
-
-.block h2 {
-  font-family: var(--serif);
-  font-size: 1.3rem;
-  font-weight: 600;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 8px;
-  margin: 0 0 20px;
+.two {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
 }
 
-/* ---------------- Entries (experience / projects / education) ---------------- */
-
-.entry {
-  padding: 14px 16px;
-  margin: 0 -16px 2px;
-  border-radius: 8px;
-  border-left: 3px solid transparent;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-.entry:hover {
-  background: var(--accent-soft);
-  border-left-color: var(--accent);
+.fade {
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
 }
 
-.entry-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 4px 16px;
-}
-.entry-header h3 {
-  margin: 0;
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-.entry-org {
-  font-weight: 400;
-  color: var(--text-muted);
-}
-.entry-dates {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  white-space: nowrap;
+span.highlight {
+  background-color: #ffffd0;
 }
 
-.entry p { margin: 6px 0 0; }
-.entry-links { font-size: 0.9rem; }
-
-.entry-project {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-.entry-thumb {
-  flex: 0 0 120px;
-  width: 120px;
-  height: 90px;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-  background:
-    repeating-linear-gradient(135deg,
-      var(--accent-soft), var(--accent-soft) 8px,
-      #ffffff 8px, #ffffff 16px);
-}
-.entry-body { flex: 1; min-width: 0; }
-
-/* ---------------- Footer ---------------- */
-
-.site-footer {
-  border-top: 1px solid var(--border);
-  padding-top: 20px;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-}
-.site-footer p { margin: 0; }
-
-/* ---------------- Responsive ---------------- */
-
-@media (max-width: 600px) {
-  .wrap { padding: 40px 20px 40px; }
-
-  .intro {
-    flex-direction: column-reverse;
-    text-align: center;
-    gap: 20px;
-  }
-  .links span { display: inline-block; }
-
-  .entry-project { flex-direction: column; }
-  .entry-thumb { width: 100%; }
-
-  .entry-header { flex-direction: column; align-items: flex-start; gap: 2px; }
+.colored-box {
+    color: black;
+    padding: 20px;
+    display: inline-block;
+    border-radius: 10px;
 }
 
-/* ---------------- Accessibility ---------------- */
-
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
+/* ------------------------------------------------------------------
+   Addition (not in the original stylesheet): the reference site swaps
+   ".two"'s opacity via a pair of onmouseover/onmouseout JS functions
+   written out per entry. These two rules do the same crossfade with
+   plain CSS, so entries don't each need their own named JS functions.
+   Everything above this line is unmodified from jonbarron.github.io.
+   ------------------------------------------------------------------ */
+.two {
+  opacity: 0;
+}
+.one:hover .two {
+  opacity: 1;
 }
