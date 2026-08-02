@@ -3,12 +3,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>Rohan Lingam</title>
+    <!-- ==== EDIT ME: the text in the browser tab ==== -->
+    <title>Your Name</title>
 
-    <meta name="author" content="Rohan Lingam">
+    <meta name="author" content="Your Name">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-
   </head>
 
   <body>
@@ -16,149 +17,272 @@
       <tr style="padding:0px">
         <td style="padding:0px">
 
-          <!-- ============ HEADER ============ -->
+          <!-- =================================================================
+               HEADER: name, bio, links, photo
+               ================================================================= -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr style="padding:0px">
               <td style="padding:2.5%;width:63%;vertical-align:middle">
+
                 <p class="name" style="text-align: center;">
-                  Rohan Lingam
+                  Your Name
                 </p>
+
+                <!-- ==== EDIT ME: your bio. Keep it to 3-5 short sentences. ==== -->
                 <p>
-                  [One or two sentences: who you are and what you do right now &mdash; e.g. "I'm a software engineer / student at <a href="#">___</a>, interested in ___." This is the first thing anyone reads, so keep it plain and specific, the way the line above this one talks about DeepMind and NeRF.]
+                  I'm an electrical engineering student at <a href="https://www.caltech.edu/">Your University</a>, where I focus on
+                  analog circuits, embedded systems, and hardware that has to survive contact with the real world.
+                  I like projects that start on a breadboard and end up as something you can hold: PCBs, motor drivers,
+                  sensor rigs, and the occasional thing that catches fire.
+                  Right now I'm working on <a href="projects/example-project.html">a wearable biosignal logger</a> and
+                  learning as much RF as I can get my hands on.
+                  Off-campus I captain a dance team and spend too much money on test equipment.
                 </p>
+
+                <!-- ==== EDIT ME: your links. Add or remove entries freely.
+                       Separator between links is: &nbsp;/&nbsp;             ==== -->
                 <p style="text-align:center">
                   <a href="mailto:you@example.com">Email</a> &nbsp;/&nbsp;
-                  <a href="resume.pdf">Resume</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/rohanlingam">Github</a> &nbsp;/&nbsp;
-                  <a href="https://linkedin.com/in/rohanlingam">LinkedIn</a> &nbsp;/&nbsp;
-                  <a href="https://twitter.com/rohanlingam">Twitter</a>
+                  <a href="data/YourName-CV.pdf">CV</a> &nbsp;/&nbsp;
+                  <a href="#projects">Projects</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/yourusername/">Github</a> &nbsp;/&nbsp;
+                  <a href="https://www.goodreads.com/user/show/000000000">Goodreads</a>
                 </p>
+
               </td>
               <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images/profile-placeholder.svg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/profile-placeholder.svg" class="hoverZoomLink"></a>
+                <!-- ==== EDIT ME: swap images/profile.jpg for your own photo ==== -->
+                <a href="images/profile.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/profile.jpg"></a>
               </td>
             </tr>
           </tbody></table>
 
-          <!-- ============ PROJECTS ============
-               Same section pattern as "Research" in the reference: an <h2>,
-               a one-paragraph intro mentioning the highlight convention,
-               then a table of entries below. -->
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
+          <!-- =================================================================
+               PROJECTS & RESEARCH: section heading + intro
+               ================================================================= -->
+          <table id="projects" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Projects</h2>
+                <h2>Projects &amp; Research</h2>
+                <!-- ==== EDIT ME: one paragraph describing the kind of work below ==== -->
                 <p>
-                  [One line on what kind of work this is &mdash; e.g. "Things I've built for fun or for work." Featured projects are <span class="highlight">highlighted</span>.]
+                  I build electronics, mostly at the intersection of analog front-ends, embedded firmware, and
+                  mechanical packaging. Each project below has its own page with photos, schematics, and writeups.
+                  Projects I'm proudest of are <span class="highlight">highlighted</span>.
                 </p>
               </td>
             </tr>
           </tbody></table>
 
-          <!-- Entry rows. Each <tr> is one project: a hover-swap thumbnail
-               (.one/.two, exactly like the reference — hover over the image)
-               in the left cell, title/meta/links/description in the right
-               cell. Copy one whole <tr>...</tr> block per additional project. -->
+          <!-- =================================================================
+               PROJECT ENTRIES
+               Each <tr> ... </tr> block below is ONE project.
+               To add a project: copy a whole block, paste it where you want it
+               to appear, and change the text. Newest first is the usual order.
+               See README.md for step-by-step instructions.
+               ================================================================= -->
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-            <tr bgcolor="#ffffd0">
+            <!-- ===================== PROJECT ENTRY START =====================
+                 This one is HIGHLIGHTED (the pale yellow background) and has a
+                 hover swap: the image changes when you mouse over the row.
+                 To un-highlight it, delete: bgcolor="#ffffd0"
+                 ============================================================== -->
+            <tr onmouseout="biologger_stop()" onmouseover="biologger_start()" bgcolor="#ffffd0">
               <td style="padding:16px;width:20%;vertical-align:middle">
                 <div class="one">
-                  <div class="two">
-                    <img src="images/thumb-after.svg" width="100%">
+                  <div class="two" id="biologger_image">
+                    <img src="images/projects/biologger_hover.jpg" width="100%" alt="board render">
                   </div>
-                  <img src="images/thumb-before.svg" width="100%">
+                  <img src="images/projects/biologger.jpg" width="100%" alt="biosignal logger">
                 </div>
+                <script type="text/javascript">
+                  function biologger_start() { document.getElementById('biologger_image').style.opacity = "1"; }
+                  function biologger_stop()  { document.getElementById('biologger_image').style.opacity = "0"; }
+                  biologger_stop()
+                </script>
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="#">
-                  <span class="papertitle">Project Name</span>
+                <a href="projects/example-project.html">
+                  <span class="papertitle">Wearable Biosignal Logger</span>
                 </a>
                 <br>
-                <em>Personal project</em>, 2026
+                <!-- Collaborators, advisors, teammates. Link them if they have sites. -->
+                <strong>Your Name</strong>,
+                <a href="#">Teammate One</a>,
+                <a href="#">Teammate Two</a>
                 <br>
-                <a href="#">demo</a>
+                <!-- Context line: course, club, lab, competition, or "Personal project" -->
+                <em>Personal project</em>, 2025
+                <br>
+                <a href="projects/example-project.html">project page</a>
                 /
-                <a href="#">code</a>
+                <a href="data/example-project-report.pdf">report</a>
+                /
+                <a href="https://github.com/yourusername/">code</a>
                 <p></p>
                 <p>
-                  [What it is, what you built it with, and why it's interesting &mdash; one or two sentences. This entry is highlighted (pale-yellow row) and its thumbnail swaps on hover, same as the reference &mdash; swap in a before/after pair or a screenshot + a short clip.]
+                  A 3-channel ECG/EMG front-end with 24-bit sigma-delta conversion, on-board SD logging,
+                  and a battery that actually lasts a full day. Includes the analog design, the PCB, and the
+                  firmware.
                 </p>
               </td>
             </tr>
+            <!-- ====================== PROJECT ENTRY END ====================== -->
 
+
+            <!-- ===================== PROJECT ENTRY START =====================
+                 A plain entry: single static thumbnail, no hover, no highlight.
+                 This is the simplest kind. Copy this one for most projects.
+                 ============================================================== -->
             <tr>
               <td style="padding:16px;width:20%;vertical-align:middle">
-                <div class="one">
-                  <div class="two">
-                    <img src="images/thumb-after.svg" width="100%">
-                  </div>
-                  <img src="images/thumb-before.svg" width="100%">
-                </div>
+                <img src="images/projects/motordriver.jpg" alt="motor driver" width="160" height="160">
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="#">
-                  <span class="papertitle">Project Name</span>
+                <a href="projects/second-project.html">
+                  <span class="papertitle">Brushless Motor Driver from Scratch</span>
                 </a>
                 <br>
-                <em>Side project &mdash; React, Node.js</em>, 2025
+                <strong>Your Name</strong>
                 <br>
-                <a href="#">demo</a>
+                <em>Course project, EE 101</em>, 2025
+                <br>
+                <a href="projects/second-project.html">project page</a>
                 /
-                <a href="#">code</a>
+                <a href="https://github.com/yourusername/">code</a>
                 <p></p>
                 <p>
-                  [Copy this whole &lt;tr&gt;...&lt;/tr&gt; block for each additional project. Drop the bgcolor="#ffffd0" attribute on the &lt;tr&gt; for entries you don't want highlighted &mdash; this one isn't.]
+                  A 40 V, 15 A field-oriented-control driver built around an STM32G4, with current sensing,
+                  gate drive, and a protection scheme that survived a stalled rotor.
                 </p>
               </td>
             </tr>
+            <!-- ====================== PROJECT ENTRY END ====================== -->
+
+
+            <!-- ===================== PROJECT ENTRY START =====================
+                 An entry that links out instead of to a project page: useful for
+                 a paper, a competition writeup, or a repo with a good README.
+                 ============================================================== -->
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <img src="images/projects/antenna.jpg" alt="antenna array" width="160" height="160">
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="https://github.com/yourusername/">
+                  <span class="papertitle">2.4 GHz Patch Antenna Array</span>
+                </a>
+                <br>
+                <strong>Your Name</strong>,
+                <a href="#">Advisor Name</a>
+                <br>
+                <em>Undergraduate research</em>, 2024
+                <br>
+                <a href="https://github.com/yourusername/">code</a>
+                /
+                <a href="data/example-project-report.pdf">writeup</a>
+                <p></p>
+                <p>
+                  Designed, simulated, and measured a 4-element patch array on FR-4. Measured gain landed within
+                  0.8 dB of the HFSS model, which felt like a miracle at the time.
+                </p>
+              </td>
+            </tr>
+            <!-- ====================== PROJECT ENTRY END ====================== -->
 
           </tbody></table>
 
-          <!-- ============ EXPERIENCE / EDUCATION ============
-               Same compact pattern as the reference's "Teaching" /
-               "Academic Service" rows: a colored-box label instead of a
-               thumbnail, plain list on the right. Good for sections that
-               don't need per-entry images. -->
-          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <!-- =================================================================
+               MISC
+               ================================================================= -->
+          <table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+            <tr>
+              <td>
+                <h2>Misc</h2>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+            <!-- ===================== MISC ENTRY START =======================
+                 Each block is one colored box + a bullet list.
+                 Change the box label and the background-color hex to taste.
+                 Colors used on the original site: #fcb97d #aaba9e #c6b89e #edd892
+                 ============================================================= -->
+            <tr>
+              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+                <div class="colored-box" style="background-color: #fcb97d;">
+                  <h2>Dance</h2>
+                </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <ul style="margin:0;padding-left:20px">
+                  <li>Captain, <a href="#">Your Dance Team</a>, 2024&ndash;present. Run auditions, set the season calendar, and choreograph two pieces a year.</li>
+                  <li>Grew the team from 12 to 30 dancers and started a beginner track for people who'd never trained.</li>
+                  <li>Competed at <a href="#">Competition Name</a>, 2025.</li>
+                </ul>
+              </td>
+            </tr>
+            <!-- ====================== MISC ENTRY END ======================== -->
 
             <tr>
               <td align="center" style="padding:16px;width:20%;vertical-align:middle">
-                <div class="colored-box" style="background-color: #a8d0e6;">
-                  <h2>Experience</h2>
+                <div class="colored-box" style="background-color: #aaba9e;">
+                  <h2>Outdoors</h2>
                 </div>
               </td>
-              <td style="padding:8px;width:80%;vertical-align:center">
-                <strong>Role Title &mdash; Company Name</strong> (Month Year &ndash; Present)
-                <br>
-                [One line on what you actually did &mdash; a concrete result beats a job description.]
-                <br><br>
-                <strong>Role Title &mdash; Company Name</strong> (Month Year &ndash; Month Year)
-                <br>
-                [Add a &lt;br&gt;&lt;br&gt; and one more line per role.]
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <ul style="margin:0;padding-left:20px">
+                  <li>Wilderness First Responder (WFR), certified 2025 through <a href="#">Provider Name</a>. 80 hours of backcountry medicine.</li>
+                  <li>Trip leader for <a href="#">Your Outdoors Club</a>: backpacking, alpine scrambles, and one very memorable river crossing.</li>
+                </ul>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+                <div class="colored-box" style="background-color: #c6b89e;">
+                  <h2>Debate</h2>
+                </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <ul style="margin:0;padding-left:20px">
+                  <li>Four years of Lincoln-Douglas debate; state quarterfinalist, 2022.</li>
+                  <li>Captained my high school team and coached the novice squad.</li>
+                  <li>Still the reason I can write a technical argument on a deadline.</li>
+                </ul>
               </td>
             </tr>
 
             <tr>
               <td align="center" style="padding:16px;width:20%;vertical-align:middle">
                 <div class="colored-box" style="background-color: #edd892;">
-                  <h2>Education</h2>
+                  <h2>Elsewhere</h2>
                 </div>
               </td>
-              <td style="padding:8px;width:80%;vertical-align:center">
-                <strong>University Name &mdash; Degree, Major</strong> (Year &ndash; Year)
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="https://www.goodreads.com/user/show/000000000">What I'm reading</a>
+                <br>
+                <a href="#">A blog post I liked</a>
+                <br>
+                <a href="#">Something else worth linking</a>
               </td>
             </tr>
 
           </tbody></table>
 
-          <!-- ============ FOOTER ============ -->
+          <!-- =================================================================
+               FOOTER
+               ================================================================= -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:0px">
                 <br>
                 <p style="text-align:right;font-size:small;">
-                  Design adapted from <a href="https://jonbarron.info/">Jon Barron</a>'s personal site, whose <a href="https://github.com/jonbarron/jonbarron.github.io">source</a> is offered freely to clone for personal use.
+                  Template based on <a href="https://jonbarron.info/">Jon Barron</a>'s
+                  <a href="https://github.com/jonbarron/jonbarron_website">website</a>.
                 </p>
               </td>
             </tr>
@@ -166,6 +290,6 @@
 
         </td>
       </tr>
-    </tbody></table>
+    </table>
   </body>
 </html>
