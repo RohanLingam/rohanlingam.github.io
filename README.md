@@ -8,20 +8,24 @@ refresh the browser. That's the whole workflow.
 ## 1. What's in here
 
 ```
-index.html                     ← the homepage (bio, links, project list, misc)
+index.html                     ← the homepage (bio, links, Updates, Miscellaneous)
+projects.html                  ← the project list, one row per project
 stylesheet.css                 ← all styling. You rarely need to touch this.
 README.md                      ← this file
 images/
   profile.jpg                  ← your headshot
   projects/                    ← every project image and video goes here
 data/
-  YourName-CV.pdf              ← your CV
+  RohanLingam-CV.pdf           ← your CV
   example-project-report.pdf   ← any PDF you want to link or embed
 projects/
   _TEMPLATE.html               ← copy this to start a new project page
   example-project.html         ← a full example (images, PDF, table, code)
   second-project.html          ← a short example
 ```
+
+Three levels: the homepage introduces you, `projects.html` lists everything you've built,
+and each file in `projects/` is one project written up in full.
 
 Every file currently in `images/` and `data/` is a grey placeholder. Overwrite them
 with your own files, keeping the same names, and the site updates with no HTML edits.
@@ -47,20 +51,29 @@ Then open `http://localhost:8000`.
 
 ## 3. First things to change
 
-Open `index.html` in any text editor (VS Code, Sublime, even TextEdit in plain-text mode)
-and search for these:
+Your name, email, and GitHub are already filled in. Still to do, in `index.html`:
 
 | Find | Replace with |
 |---|---|
-| `Your Name` | your name (appears in the title tag, the big header, and author meta) |
-| `you@example.com` | your email |
-| `yourusername` | your GitHub username |
 | `goodreads.com/user/show/000000000` | your Goodreads profile URL |
-| `data/YourName-CV.pdf` | rename the file in `data/` and update this link |
 | the bio paragraph | your bio, 3–5 sentences |
+| the Updates bullets | real updates (see below) |
+| the Miscellaneous bullets | real activities, and `#` links with real URLs |
 
-Then drop your headshot in as `images/profile.jpg`. Square crops look best — the CSS
-rounds it into a circle.
+Drop your headshot in as `images/profile.jpg` — square crops look best, since the CSS
+rounds it into a circle. Replace `data/RohanLingam-CV.pdf` with your real CV, keeping
+the filename.
+
+### The Updates section
+
+A running list, newest at the top. One line each. To add one, copy a single line:
+
+```html
+<li><strong>Aug 2026</strong> &mdash; What happened. <a href="#">Link if there is one.</a></li>
+```
+
+Keep it to roughly the last year and delete old entries as you go. A stale updates list
+reads worse than no updates list.
 
 ---
 
@@ -78,9 +91,9 @@ Two steps: make the page, then link to it from the homepage.
 4. Put your images in `images/projects/` and your PDFs in `data/`, then point the
    `src` and `href` attributes at them.
 
-### Step B — add the row to the homepage
+### Step B — add the row to `projects.html`
 
-Open `index.html`, find the section marked:
+Open `projects.html`, find the section marked:
 
 ```
 <!-- ===================== PROJECT ENTRY START ===================== -->
@@ -208,16 +221,23 @@ If an image doesn't show up, this is almost always why. Capitalization counts to
 
 ---
 
-## 6. Editing the Misc section
+## 6. Editing the Miscellaneous section
 
-Bottom of `index.html`. Each entry is a colored box on the left and a bullet list on
-the right. Copy a block between `MISC ENTRY START` and `MISC ENTRY END`, change the
-label in the `<h2>`, change the `background-color`, and rewrite the bullets.
+Bottom of `index.html`. It's one bullet list. Each top-level bullet is a category, with
+the bold lead-in doing the labeling, and optional sub-bullets underneath:
 
-Colors from the original site, if you want more: `#fcb97d` `#aaba9e` `#c6b89e` `#edd892`
+```html
+<li><strong>Category.</strong> One-line summary.
+  <ul style="padding-left:22px">
+    <li>A detail.</li>
+    <li>Another detail.</li>
+  </ul>
+</li>
+```
 
-Keep the bullets to one line each. It reads as a quick list of who you are outside
-the projects, not a second resume.
+To add a category, copy that whole block. To drop the sub-bullets, delete the inner
+`<ul>` and leave a single line. Keep each bullet to one line — this section reads as a
+quick sketch of who you are outside the projects, not a second resume.
 
 ---
 

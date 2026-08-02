@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Projects &mdash; Rohan Lingam</title>
+
+    <meta name="author" content="Rohan Lingam">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+
+          <!-- =================================================================
+               HEADER
+               ================================================================= -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:2.5% 2.5% 0px 2.5%">
+                <p class="backlink"><a href="index.html">&larr; back to home</a></p>
+                <p class="name" style="text-align:center;padding-top:8px">
+                  Projects &amp; Research
+                </p>
+                <!-- ==== EDIT ME: one paragraph describing the kind of work below ==== -->
+                <p style="text-align:center">
+                  I build electronics, mostly at the intersection of analog front-ends, embedded firmware, and
+                  mechanical packaging. Each project has its own page with photos, schematics, and writeups.
+                  Projects I'm proudest of are <span class="highlight">highlighted</span>.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <!-- =================================================================
+               PROJECT ENTRIES
+               Each <tr> ... </tr> block below is ONE project.
+               To add a project: copy a whole block, paste it where you want it
+               to appear, and change the text. Newest first is the usual order.
+               See README.md for step-by-step instructions.
+               ================================================================= -->
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+            <!-- ===================== PROJECT ENTRY START =====================
+                 This one is HIGHLIGHTED (the pale yellow background) and has a
+                 hover swap: the image changes when you mouse over the row.
+                 To un-highlight it, delete: bgcolor="#ffffd0"
+                 ============================================================== -->
+            <tr onmouseout="biologger_stop()" onmouseover="biologger_start()" bgcolor="#ffffd0">
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id="biologger_image">
+                    <img src="images/projects/biologger_hover.jpg" width="100%" alt="board render">
+                  </div>
+                  <img src="images/projects/biologger.jpg" width="100%" alt="biosignal logger">
+                </div>
+                <script type="text/javascript">
+                  function biologger_start() { document.getElementById('biologger_image').style.opacity = "1"; }
+                  function biologger_stop()  { document.getElementById('biologger_image').style.opacity = "0"; }
+                  biologger_stop()
+                </script>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="projects/example-project.html">
+                  <span class="papertitle">Wearable Biosignal Logger</span>
+                </a>
+                <br>
+                <!-- Collaborators, advisors, teammates. Link them if they have sites. -->
+                <strong>Rohan Lingam</strong>,
+                <a href="#">Teammate One</a>,
+                <a href="#">Teammate Two</a>
+                <br>
+                <!-- Context line: course, club, lab, competition, or "Personal project" -->
+                <em>Personal project</em>, 2026
+                <br>
+                <a href="projects/example-project.html">project page</a>
+                /
+                <a href="data/example-project-report.pdf">report</a>
+                /
+                <a href="https://github.com/RohanLingam/">code</a>
+                <p></p>
+                <p>
+                  A 3-channel ECG/EMG front-end with 24-bit sigma-delta conversion, on-board SD logging,
+                  and a battery that actually lasts a full day. Includes the analog design, the PCB, and the
+                  firmware.
+                </p>
+              </td>
+            </tr>
+            <!-- ====================== PROJECT ENTRY END ====================== -->
+
+
+            <!-- ===================== PROJECT ENTRY START =====================
+                 A plain entry: single static thumbnail, no hover, no highlight.
+                 This is the simplest kind. Copy this one for most projects.
+                 ============================================================== -->
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <img src="images/projects/motordriver.jpg" alt="motor driver" width="160" height="160">
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="projects/second-project.html">
+                  <span class="papertitle">Brushless Motor Driver from Scratch</span>
+                </a>
+                <br>
+                <strong>Rohan Lingam</strong>
+                <br>
+                <em>Course project, EE 101</em>, 2025
+                <br>
+                <a href="projects/second-project.html">project page</a>
+                /
+                <a href="https://github.com/RohanLingam/">code</a>
+                <p></p>
+                <p>
+                  A 40 V, 15 A field-oriented-control driver built around an STM32G4, with current sensing,
+                  gate drive, and a protection scheme that survived a stalled rotor.
+                </p>
+              </td>
+            </tr>
+            <!-- ====================== PROJECT ENTRY END ====================== -->
+
+
+            <!-- ===================== PROJECT ENTRY START =====================
+                 An entry that links out instead of to a project page: useful for
+                 a paper, a competition writeup, or a repo with a good README.
+                 ============================================================== -->
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <img src="images/projects/antenna.jpg" alt="antenna array" width="160" height="160">
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="https://github.com/RohanLingam/">
+                  <span class="papertitle">2.4 GHz Patch Antenna Array</span>
+                </a>
+                <br>
+                <strong>Rohan Lingam</strong>,
+                <a href="#">Advisor Name</a>
+                <br>
+                <em>Undergraduate research</em>, 2025
+                <br>
+                <a href="https://github.com/RohanLingam/">code</a>
+                /
+                <a href="data/example-project-report.pdf">writeup</a>
+                <p></p>
+                <p>
+                  Designed, simulated, and measured a 4-element patch array on FR-4. Measured gain landed within
+                  0.8 dB of the HFSS model, which felt like a miracle at the time.
+                </p>
+              </td>
+            </tr>
+            <!-- ====================== PROJECT ENTRY END ====================== -->
+
+          </tbody></table>
+
+          <!-- =================================================================
+               FOOTER
+               ================================================================= -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:16px">
+                <p class="backlink"><a href="index.html">&larr; back to home</a></p>
+                <p style="text-align:right;font-size:small;">
+                  Template based on <a href="https://jonbarron.info/">Jon Barron</a>'s
+                  <a href="https://github.com/jonbarron/jonbarron_website">website</a>.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
