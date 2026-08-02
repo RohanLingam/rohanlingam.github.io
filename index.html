@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohan Lingam</title>
+  <meta name="description" content="Personal website of Rohan Lingam.">
+  <meta property="og:title" content="Rohan Lingam">
+  <meta property="og:description" content="Personal website of Rohan Lingam.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
 
+    <!-- ============ HEADER: name, photo, one-line bio, contact links ============ -->
+    <header class="intro">
+      <div class="intro-text">
+        <h1 class="name">Rohan Lingam</h1>
+        <p class="bio">
+          [One or two sentences: who you are and what you do right now — e.g. "I'm a software
+          engineer / student at ___, interested in ___." This is the first thing anyone reads,
+          so keep it plain and specific.]
+        </p>
+        <nav class="links" aria-label="Contact links">
+          <a href="mailto:you@example.com">Email</a>
+          <span aria-hidden="true">/</span>
+          <a href="resume.pdf">Resume</a>
+          <span aria-hidden="true">/</span>
+          <a href="https://github.com/rohanlingam">GitHub</a>
+          <span aria-hidden="true">/</span>
+          <a href="https://linkedin.com/in/rohanlingam">LinkedIn</a>
+          <span aria-hidden="true">/</span>
+          <a href="https://twitter.com/rohanlingam">Twitter</a>
+        </nav>
+      </div>
+      <div class="intro-photo">
+        <img src="images/profile-placeholder.svg" alt="Photo of Rohan Lingam" width="160" height="160">
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ============ ABOUT ============ -->
+      <section class="block" id="about">
+        <h2>About</h2>
+        <p>
+          [Two to four sentences of actual narrative: where you're based or from, what you
+          studied or do now, the kind of problems you like working on, and one detail that
+          makes this recognizably you rather than a template — a specific interest, a hobby,
+          how you think. Write it like you're talking to a person.]
+        </p>
+      </section>
+
+      <!-- ============ EXPERIENCE ============ -->
+      <section class="block" id="experience">
+        <h2>Experience</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3>Role Title <span class="entry-org">— Company Name</span></h3>
+            <span class="entry-dates">Month Year – Present</span>
+          </div>
+          <p>[One or two sentences on what you actually did. A concrete result beats a job description — "cut build time 40%" not "responsible for CI."]</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3>Role Title <span class="entry-org">— Company Name</span></h3>
+            <span class="entry-dates">Month Year – Month Year</span>
+          </div>
+          <p>[Same pattern. Copy this whole `.entry` block for each additional role.]</p>
+        </div>
+      </section>
+
+      <!-- ============ PROJECTS ============ -->
+      <section class="block" id="projects">
+        <h2>Projects</h2>
+
+        <div class="entry entry-project">
+          <div class="entry-thumb" aria-hidden="true"></div>
+          <div class="entry-body">
+            <div class="entry-header">
+              <h3>Project Name</h3>
+              <span class="entry-dates">2026</span>
+            </div>
+            <p>[What it is, what you built it with, and why it's interesting — one or two sentences.]</p>
+            <p class="entry-links"><a href="#">Demo</a> &nbsp;/&nbsp; <a href="#">Code</a></p>
+          </div>
+        </div>
+
+        <div class="entry entry-project">
+          <div class="entry-thumb" aria-hidden="true"></div>
+          <div class="entry-body">
+            <div class="entry-header">
+              <h3>Project Name</h3>
+              <span class="entry-dates">2025</span>
+            </div>
+            <p>[Copy this whole `.entry.entry-project` block for each additional project. Swap the
+              `.entry-thumb` div for an &lt;img&gt; tag once you have a real screenshot — see README.]</p>
+            <p class="entry-links"><a href="#">Demo</a> &nbsp;/&nbsp; <a href="#">Code</a></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ EDUCATION ============ -->
+      <section class="block" id="education">
+        <h2>Education</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3>University Name <span class="entry-org">— Degree, Major</span></h3>
+            <span class="entry-dates">Year – Year</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Rohan Lingam. Built with plain HTML &amp; CSS, hosted on GitHub Pages.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
