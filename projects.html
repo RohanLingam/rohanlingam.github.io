@@ -28,7 +28,9 @@
                 </p>
                 <!-- ==== EDIT ME: one paragraph describing the kind of work below ==== -->
                 <p style="text-align:left">
-                  I love making. I firmly believe in open-sourcing projects. I try to thoroughly document my process while building electronics. <br> <br> 
+                  I love making. <br><br>
+                  
+                  I firmly believe in open-sourcing projects. I try to thoroughly document my process while building electronics. <br> <br> 
 
                   I would love for other engineers to replicate these builds and send me feedback on my instructions! Projects in progress are <span class="highlight">highlighted</span>.
                 </p>
@@ -38,18 +40,10 @@
 
           <!-- =================================================================
                PROJECT ENTRIES
-               Each <tr> ... </tr> block below is ONE project.
-               To add a project: copy a whole block, paste it where you want it
-               to appear, and change the text. Newest first is the usual order.
-               See README.md for step-by-step instructions.
                ================================================================= -->
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-            <!-- ===================== PROJECT ENTRY START =====================
-                 This one is HIGHLIGHTED (the pale yellow background) and has a
-                 hover swap: the image changes when you mouse over the row.
-                 To un-highlight it, delete: bgcolor="#ffffd0"
-                 ============================================================== -->
+            <!-- ===================== PROJECT ENTRY START ===================== -->
             <tr onmouseout="biologger_stop()" onmouseover="biologger_start()" bgcolor="#ffffd0">
               <td style="padding:16px;width:20%;vertical-align:middle">
                 <div class="one">
@@ -69,11 +63,9 @@
                   <span class="papertitle">Programmable Delay Line on RFSoC 4x2 Kit. </span>
                 </a>
                 <br>
-                <!-- Collaborators, advisors, teammates. Link them if they have sites. -->
                 <strong>Rohan Lingam</strong>,
                 <a href="https://www.jpl.nasa.gov/site/research/dhawkins/">David W. Hawkins</a>
                 <br>
-                <!-- Context line: course, club, lab, competition, or "Personal project" -->
                 <em>JPL Div. 363F</em>, 2026
                 <br>
                 <a href="projects/example-project.html">project page</a>
@@ -90,61 +82,80 @@
             <!-- ====================== PROJECT ENTRY END ====================== -->
 
 
-            <!-- ===================== PROJECT ENTRY START =====================
-                 A plain entry: single static thumbnail, no hover, no highlight.
-                 This is the simplest kind. Copy this one for most projects.
-                 ============================================================== -->
-            <tr>
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <img src="images/projects/motordriver.jpg" alt="motor driver" width="160" height="160">
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="projects/second-project.html">
-                  <span class="papertitle">Brushless Motor Driver from Scratch</span>
-                </a>
-                <br>
-                <strong>Rohan Lingam</strong>
-                <br>
-                <em>Course project, EE 101</em>, 2025
-                <br>
-                <a href="projects/second-project.html">project page</a>
-                /
-                <a href="https://github.com/RohanLingam/">code</a>
-                <p></p>
-                <p>
-                  A 40 V, 15 A field-oriented-control driver built around an STM32G4, with current sensing,
-                  gate drive, and a protection scheme that survived a stalled rotor.
-                </p>
-              </td>
-            </tr>
-            <!-- ====================== PROJECT ENTRY END ====================== -->
-
-
-            <!-- ===================== PROJECT ENTRY START =====================
-                 An entry that links out instead of to a project page: useful for
-                 a paper, a competition writeup, or a repo with a good README.
-                 ============================================================== -->
+            <!-- ===================== PROJECT ENTRY START ===================== -->
             <tr>
               <td style="padding:16px;width:20%;vertical-align:middle">
                 <img src="images/projects/antenna.jpg" alt="antenna array" width="160" height="160">
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
                 <a href="https://github.com/RohanLingam/">
-                  <span class="papertitle">2.4 GHz Patch Antenna Array</span>
+                  <span class="papertitle">Compact, Low-Cost Antenna Portfolio for Wideband Radio-Glaciological Sounding</span>
                 </a>
                 <br>
                 <strong>Rohan Lingam</strong>,
-                <a href="#">Advisor Name</a>
+                <a href="#">Daniel F. May</a>,
+                <a href="#">Dustin M. Schroeder</a>
                 <br>
-                <em>Undergraduate research</em>, 2025
+                <em>IGARSS 2026</em>, 2026
                 <br>
                 <a href="https://github.com/RohanLingam/">code</a>
                 /
-                <a href="data/example-project-report.pdf">writeup</a>
+                <a href="data/Antenna_Portfolio_Paper_Lingam_et_al.pdf">writeup</a>
                 <p></p>
                 <p>
-                  Designed, simulated, and measured a 4-element patch array on FR-4. Measured gain landed within
-                  0.8 dB of the HFSS model, which felt like a miracle at the time.
+                  A low-cost, modular antenna portfolio spanning 1 MHz to 1 GHz designed for field-deployable radio-glaciological sounding. Rather than optimizing a single large antenna, this project provides a set of compact, predominantly planar PCB antennas. Includes log-periodic dipole array, Vivaldi, planar bowtie, and other low-frequency prototypes, allowing researchers to mix and match antennas in the field.
+                </p>
+              </td>
+            </tr>
+            <!-- ====================== PROJECT ENTRY END ====================== -->
+
+
+            <!-- ===================== PROJECT ENTRY START ===================== -->
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <img src="images/projects/motordriver.jpg" alt="voltage regulator amplifier" width="160" height="160">
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="projects/second-project.html">
+                  <span class="papertitle">PCB Voltage Regulator &amp; Speaker Amplifier</span>
+                </a>
+                <br>
+                <strong>Rohan Lingam</strong>
+                <br>
+                <em>Course Project &amp; EE 101A & 101B</em>, 2026
+                <br>
+                <a href="projects/second-project.html">project page</a>
+                /
+                <a href="https://github.com/RohanLingam/">code</a>
+                <p></p>
+                <p>
+                  A 0–24 V voltage regulator on a custom PCB design that powers a wall-pluggable speaker amplifier, which was built and hand-soldered.
+                </p>
+              </td>
+            </tr>
+            <!-- ====================== PROJECT ENTRY END ====================== -->
+
+
+            <!-- ===================== PROJECT ENTRY START ===================== -->
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <img src="images/projects/motordriver.jpg" alt="LoRa node" width="160" height="160">
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="projects/second-project.html">
+                  <span class="papertitle">LoRa-Based Environmental Monitoring Node</span>
+                </a>
+                <br>
+                <strong>Rohan Lingam</strong>
+                <br>
+                <em>Course project, EE 156</em>, 2026
+                <br>
+                <a href="projects/second-project.html">project page</a>
+                /
+                <a href="https://github.com/RohanLingam/">code</a>
+                <p></p>
+                <p>
+                  Designed, brought up, and tested a custom PCB solution for a LoRa-based environmental monitoring node using a Feather M4 microcontroller, BME688 sensor, and RFM95CW transceiver module. Capable of measuring live weather telemetry, the module transmits packets wirelessly every 5 seconds over a 917 MHz channel. The module successfully demonstrated round-trip transmission from over 2 miles from the Stanford Dish to a repeater at the Packard EE building.
                 </p>
               </td>
             </tr>
